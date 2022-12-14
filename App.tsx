@@ -6,10 +6,13 @@ import {
   Poppins_400Regular,
   Poppins_700Bold,
 } from "@expo-google-fonts/poppins";
-import { Dashboard } from "./src/screens/Dashboard";
+
+
 import { THEME } from "./src/styles/global";
+import { Login } from "./src/screens/Login";
 
 export default function App() {
+
   let [fontsLoaded] = useFonts({
     Poppins_300Light,
     Poppins_400Regular,
@@ -18,7 +21,7 @@ export default function App() {
 
   return (
     <NativeBaseProvider theme={THEME}>
-      {fontsLoaded ? <Dashboard  /> : null}
+      {fontsLoaded ? <Login  /> : null}
     </NativeBaseProvider>
   );
 }

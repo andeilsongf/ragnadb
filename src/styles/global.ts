@@ -3,8 +3,9 @@ import { extendTheme } from "native-base";
 export const THEME = extendTheme({
   colors: {
     gray: {
-      200: "#121212",
-      100: "#2e2c2d",
+      300: "#121212",
+      200: "#2e2c2d",
+      100: "#A0A0A0"
     },
 
     white: "#fff",
@@ -28,5 +29,20 @@ export const THEME = extendTheme({
       200: "#0640aa",
       100: "#43b7e3",
     },
+
+    fontConfig: {
+      Poppins: {
+        300: 'Poppins_300Light',
+        400: 'Poppins_400Regular',
+        700: 'Poppins_700Bold'
+      }
+    },
+
+    fonts: {
+      heading: "Poppins",
+      body: "Poppins",
+      mono: "Poppins",
+    },
+
   },
 });
