@@ -1,7 +1,9 @@
-import { Button, Heading, Icon, Image, Input, Text, VStack } from "native-base";
-import { Password, User } from "phosphor-react-native";
+import { Heading, Image, Text, VStack } from "native-base";
 
 import LogoSvg from "../../assets/logo.png";
+import { SocialButtons } from "../../components/SocialButtons";
+
+import { AppleLogo, GoogleLogo } from "phosphor-react-native";
 
 export function Login() {
   return (
@@ -13,15 +15,10 @@ export function Login() {
         alignItems="center"
         w="full"
       >
-        <Image source={LogoSvg} w={218} h={135} alt="Logo" mb={12} />
-        <Heading
-          fontFamily="body"
-          fontSize={24}
-          color="blue.200"
-          fontWeight={400}
-        >
+        <Image source={LogoSvg} w={218} h={111} alt="Logo" mb={12} />
+        <Heading fontSize={24} color="blue.200" fontWeight={400}>
           Welcome to Ragna{""}
-          <Heading fontFamily="body" color="blue.100" fontWeight={700}>
+          <Heading color="blue.100" fontWeight={700}>
             DB
           </Heading>
         </Heading>
@@ -30,83 +27,38 @@ export function Login() {
           textAlign="center"
           color="gray.200"
           mt={3}
-          fontFamily="body"
+          fontWeight="normal"
           fontSize={14}
+          mb={12}
         >
           Log in to find informations about
           {"\n"} Ragnarok with just few clicks
         </Text>
 
-        <Input
-          mt={10}
-          placeholder="Email Address"
-          h={12}
-          borderColor="gray.200"
-          placeholderTextColor="gray.200"
-          fontSize={14}
-          fontFamily="body"
-          _focus={{
-            borderColor: "#2e2c2d",
-            backgroundColor: "#fff",
-          }}
-          autoCapitalize="none"
-          leftElement={<Icon ml={2} as={<User size={20} color="#2e2c2d" />} />}
+        <SocialButtons
+          name="Continue with Google"
+          backgroundColor="#fff"
+          color="rgba(0, 0, 0, 0.54);"
+          icon={<GoogleLogo color="rgb(0, 0, 0);" size={24} weight="light" />}
+          onPress={() => {}}
+          mb={4}
+          shadow="2"
         />
 
-        <Input
-          mt={2}
-          placeholder="Password"
-          borderColor="gray.200"
-          placeholderTextColor="gray.200"
-          h={12}
-          fontSize={14}
-          fontFamily="body"
-          _focus={{
-            borderColor: "#2e2c2d",
-            backgroundColor: "#fff",
-          }}
-          secureTextEntry
-          leftElement={
-            <Icon ml={2} as={<Password size={20} color="#2e2c2d" />} />
-          }
+        <SocialButtons
+          name="Continue with Apple"
+          backgroundColor="#000"
+          color="#fff"
+          icon={<AppleLogo color="#fff" size={24} weight="fill" />}
+          onPress={() => {}}
         />
-
-        <Text
-          alignSelf="start"
-          mt={5}
-          mb={9}
-          fontSize={14}
-          fontWeight={300}
-          color="blue.200"
-          letterSpacing={0.24}
-        >
-          Forgot password?
-        </Text>
-
-        <Button
-          w="full"
-          mt={3}
-          h={52}
-          rounded="10"
-          bg="blue.100"
-          _pressed={{
-            backgroundColor: "#0640aa",
-          }}
-          _text={{
-            color: "#FFF",
-            fontWeight: 700,
-            fontSize: 18,
-          }}
-        >
-          LOGIN
-        </Button>
       </VStack>
 
       <Text
         color="gray.300"
         mb={10}
         textAlign="center"
-        fontSize={16}
+        fontSize={14}
         fontWeight={400}
       >
         I don't have an account
